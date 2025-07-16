@@ -1,0 +1,24 @@
+{
+  "name": "design-token-transformer",
+  "version": "0.1.0",
+  "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory.",
+  "devDependencies": {
+    "deepmerge": "^4.3.1",
+    "style-dictionary": "^4.4.0",
+    "style-dictionary-utils": "^4.1.0"
+  },
+  "scripts": {
+    "start": "npm run transform-tokens",
+    "transform-tokens": "node ./transformTokens.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnofficialSoukouFest/design-token.git"
+  },
+  "author": "kanium3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UnofficialSoukouFest/design-token/issues"
+  },
+  "homepage": "https://github.com/UnofficialSoukouFest/design-token#readme"
+}
