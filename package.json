@@ -1,20 +1,29 @@
 {
-  "name": "design-token-transformer",
+  "name": "@latimeria/design-token",
   "version": "0.1.0",
   "type": "module",
   "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory.",
   "devDependencies": {
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/node-ts": "^23.6.1",
-    "deepmerge": "^4.3.1",
     "style-dictionary": "^4.4.0",
     "style-dictionary-utils": "^4.1.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "scripts": {
+    "build": "pnpm transform-tokens",
+    "prepare": "tsc build/ts/tokens.ts --outDir build/dist --declaration --declarationMap --sourceMap",
     "transform-tokens": "tsx transformTokens.ts",
     "tsc": "tsc"
+  },
+  "files": ["build", "package.json"],
+  "exports": {
+    ".": {
+      "types": "./build/dist/tokens.d.ts",
+      "import": "./build/dist/tokens.js",
+      "default": "./build/dist/tokens.js"
+    }
   },
   "repository": {
     "type": "git",

@@ -7,6 +7,7 @@ const extendedSd = await myStyleDictionary.extend({
     platforms: {
         ts: {
             transforms: ['color/hexAlpha', 'shadow/css'],
+            buildPath: "build/ts/",
             files: [
                 {
                     filter: 'isSource',
@@ -17,6 +18,7 @@ const extendedSd = await myStyleDictionary.extend({
         },
         css: {
             transformGroup: "css",
+            buildPath: "build/css/",
             files: [
                 {
                     destination: "_variables.css",

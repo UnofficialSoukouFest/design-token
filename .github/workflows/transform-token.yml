@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # this lets us work in the actual repository 
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       # if the folder named "tokens" does not exist, create it
       - name: mkdir "tokens" directory
         # change tokens here (and in line 32) if you want to use a differently named folder 
@@ -30,9 +30,9 @@ jobs:
         id: create-json
         uses: jsdaniell/create-json@v1.2.3
         with:
-          # it uses the figma filename that was send as then filename parameter
+          # it uses the figma filename that was sent as then filename parameter
           name: ${{ github.event.client_payload.filename }}
-          # it uses the json string that was send as the tokens parameter
+          # it uses the json string that was sent as the tokens parameter
           json: ${{ github.event.client_payload.tokens }}
           # it uses the directory named "tokens" to store this json file (change this if you changed it above to use a different folder)
           dir: 'tokens'
