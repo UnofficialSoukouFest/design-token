@@ -1,6 +1,7 @@
 # From https://github.com/lukasoppermann/design-token-transformer/blob/main/.github/workflows/transform-tokens.yml
 # Name of the action visible in the action overview
 name: Transform tokens send from figma
+
 # this triggers the action when a post to "https://api.github.com/repos/:username/:repo/dispatches" comes in
 on:
   repository_dispatch:
@@ -11,6 +12,10 @@ jobs:
   build:
     # the name for the entire job
     name: Transform Figma design tokens for specific platforms
+    permissions:
+      contents: write
+      pull-requests: write
+
     # we run this on ubuntu, leave this alone, if you don't have a good reason to change it
     runs-on: ubuntu-latest
     steps:
@@ -48,7 +53,3 @@ jobs:
           commit-message: ${{ github.event.client_payload.commitMessage || 'Tokens updated' }}
           title: "Design tokens updated"
           body: "Design tokens have been updated via Figma and need to be reviewed."
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # this parameter is optional and defaults to master but I am using main
-          BRANCH_NAME: 'main'
