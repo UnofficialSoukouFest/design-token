@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "pnpm transform-tokens",
-    "prepare": "tsc build/ts/tokens.ts --outDir build/dist --declaration --declarationMap --sourceMap",
+    "prepack": "tsc build/ts/tokens.ts --outDir build/dist --declaration --declarationMap --sourceMap",
     "transform-tokens": "tsx transformTokens.ts",
     "tsc": "tsc",
     "lint": "eslint .",
