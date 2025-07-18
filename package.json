@@ -28,6 +28,7 @@
     "build",
     "package.json"
   ],
+  "main": "./build/dist/tokens.js",
   "exports": {
     ".": {
       "types": "./build/dist/tokens.d.ts",

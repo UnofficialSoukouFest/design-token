@@ -3,13 +3,13 @@ on:
   push:
     tags:
       - 'v*.*.*'
-
-permissions:
-  contents: read
-  packages: write
+  workflow_dispatch:
 
 jobs:
   publish:
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,8 +22,7 @@ jobs:
         with:
           node-version: 22.x
           cache: 'pnpm'
-          registry-url: https://npm.pkg.github.com
-          scope: '@latimeria'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install
         run: pnpm install
@@ -32,6 +31,6 @@ jobs:
         run: pnpm build
 
       - name: Publish npm package
-        run: pnpm publish
+        run: pnpm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
