@@ -1,4 +1,5 @@
 onlyBuiltDependencies:
   - '@bundled-es-modules/glob'
+  - core-js
   - esbuild
   - style-dictionary

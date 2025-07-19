@@ -5,10 +5,11 @@
   "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory.",
   "devDependencies": {
     "@eslint/js": "^9.31.0",
+    "@rslib/core": "^0.10.6",
     "@stylistic/eslint-plugin": "^5.2.0",
     "@tsconfig/node-lts": "^22.0.2",
     "@tsconfig/node-ts": "^23.6.1",
-    "@types/node": "^24.0.14",
+    "@types/node": "^24.0.15",
     "eslint": "^9.31.0",
     "style-dictionary": "^4.4.0",
     "style-dictionary-utils": "^4.1.0",
@@ -18,9 +19,10 @@
   },
   "scripts": {
     "build": "pnpm transform-tokens",
-    "prepack": "tsc build/ts/tokens.ts --outDir build/dist --declaration --declarationMap --sourceMap",
+    "prepack": "pnpm run libbuild && pnpm run declaration",
+    "libbuild": "rslib build",
+    "declaration": "tsc build/ts/tokens.ts --outfile build/dist/index.d.ts --declaration --emitDeclarationOnly",
     "transform-tokens": "tsx transformTokens.ts",
-    "tsc": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -28,18 +30,19 @@
     "build",
     "package.json"
   ],
-  "main": "./build/dist/tokens.js",
+  "main": "./build/dist/index.js",
   "exports": {
     ".": {
-      "types": "./build/dist/tokens.d.ts",
-      "import": "./build/dist/tokens.js",
-      "default": "./build/dist/tokens.js"
+      "types": "./build/dist/index.d.ts",
+      "import": "./build/dist/index.js",
+      "require": "./build/dist/index.cjs",
+      "default": "./build/dist/index.js"
     },
     "./variables.css": {
-        "default": "./build/css/_variables.css",
-        "style": "./build/css/_variables.css",
-        "asset": "./build/css/_variables.css",
-        "import": "./build/css/_variables.css"
+      "default": "./build/css/_variables.css",
+      "style": "./build/css/_variables.css",
+      "asset": "./build/css/_variables.css",
+      "import": "./build/css/_variables.css"
     }
   },
   "repository": {
@@ -52,5 +55,5 @@
     "url": "https://github.com/UnofficialSoukouFest/design-token/issues"
   },
   "homepage": "https://github.com/UnofficialSoukouFest/design-token#readme",
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "pnpm@10.13.1"
 }
