@@ -1,6 +1,6 @@
 {
   "name": "@latimeria/design-token",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory.",
   "devDependencies": {
@@ -34,6 +34,12 @@
       "types": "./build/dist/tokens.d.ts",
       "import": "./build/dist/tokens.js",
       "default": "./build/dist/tokens.js"
+    },
+    "./variables.css": {
+        "default": "./build/css/_variables.css",
+        "style": "./build/css/_variables.css",
+        "asset": "./build/css/_variables.css",
+        "import": "./build/css/_variables.css"
     }
   },
   "repository": {
