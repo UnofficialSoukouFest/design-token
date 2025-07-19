@@ -21,7 +21,7 @@
     "build": "pnpm transform-tokens",
     "prepack": "pnpm run libbuild && pnpm run declaration",
     "libbuild": "rslib build",
-    "declaration": "tsc build/ts/tokens.ts --outDir build/dist/types --declaration --emitDeclarationOnly",
+    "declaration": "tsc build/ts/index.ts --outDir build/dist/types --declaration --emitDeclarationOnly",
     "transform-tokens": "tsx transformTokens.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -31,10 +31,13 @@
     "package.json"
   ],
   "main": "./build/dist/index.js",
-  "types": "./build/dist/types/tokens.d.ts",
+  "types": "./build/dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/dist/index.js",
+      "import": {
+        "types": "./build/dist/types/index.d.ts",
+        "default": "./build/dist/index.js"
+      },
       "require": "./build/dist/index.cjs",
       "default": "./build/dist/index.js"
     },

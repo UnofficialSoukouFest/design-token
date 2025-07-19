@@ -20,7 +20,7 @@ export default defineConfig({
   source: {
     tsconfigPath: "./tsconfig.json",
     entry: {
-      index: "build/ts/tokens.ts"
+      index: "build/ts/index.ts"
     },
   }
 });

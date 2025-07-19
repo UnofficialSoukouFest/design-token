@@ -11,7 +11,7 @@ const extendedSd = await myStyleDictionary.extend({
       files: [
         {
           filter: 'isSource',
-          destination: 'tokens.ts',
+          destination: 'index.ts',
           format: 'javascript/esm',
         },
       ],
