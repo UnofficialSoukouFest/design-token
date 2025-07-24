@@ -1,4 +1,29 @@
 import { StyleDictionary } from 'style-dictionary-utils'
+import { transformTypes } from 'style-dictionary/enums'
+
+StyleDictionary.registerTransform({
+  name: 'radiusIntoPx',
+  type: transformTypes.value,
+  transitive: true,
+  filter: (token) => {
+    return token.path.includes('radius')
+  },
+  transform: (token) => {
+    return `${parseInt(token.value).toString()}px`
+  }
+})
+
+StyleDictionary.registerTransform({
+  name: 'spaceIntoPx',
+  type: transformTypes.value,
+  transitive: true,
+  filter: (token) => {
+    return token.path.includes('space')
+  },
+  transform: (token) => {
+    return `${parseInt(token.value).toString()}px`
+  }
+})
 
 const myStyleDictionary = new StyleDictionary()
 
@@ -19,6 +44,7 @@ const extendedSd = await myStyleDictionary.extend({
     css: {
       transformGroup: 'css',
       buildPath: 'build/css/',
+      transforms: ['spaceIntoPx', 'radiusIntoPx'],
       files: [
         {
           destination: '_variables.css',
