@@ -88,6 +88,7 @@ export default {
     link: {
       default: "#0066cc",
       active: "#002bb2",
+      focused: "#f6f11f",
     },
     shadow: {
       default: "#00000040",
