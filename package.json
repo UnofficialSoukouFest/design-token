@@ -1,6 +1,6 @@
 {
   "name": "@latimeria/design-token",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "type": "module",
   "description": "Base repo to transform json design tokens from the figma design token plugin via amazon style directory.",
   "devDependencies": {
