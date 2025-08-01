@@ -59,6 +59,8 @@ export default {
         "1000": "#1b284c",
       },
       "light-blue": {
+        "100": "#e5f2ff",
+        "200": "#cce6ff",
         "400": "#70c8ff",
         "500": "#64affa",
         "600": "#5585e6",
@@ -122,6 +124,8 @@ export default {
     space: {
       "1": 16,
       "2": 32,
+      "3": 48,
+      "4": 64,
       "1-5": 24,
       "1-25": 20,
       "1-75": 28,
@@ -130,6 +134,7 @@ export default {
       medium: 16,
       small: 8,
       large: 24,
+      "extreme-large": 100,
     },
     menu: {
       selected: "#213a54",
@@ -186,6 +191,25 @@ export default {
         card: "#d9d9d9",
         content: "#3d3d46",
       },
+      background: "#cce6ff",
+    },
+    header: {
+      background: "#1b284c",
+      content: "#70c8ff",
+    },
+    timetable: {
+      odd: {
+        background: "#cce6ff",
+        strip: "#5585e6",
+        heading: "#0066cc",
+      },
+      even: {
+        background: "#e5f2ff",
+        strip: "#64affa",
+        heading: "#0066cc",
+      },
+      "per-time": "#213a54",
+      border: "#3d3d46",
     },
   },
 };

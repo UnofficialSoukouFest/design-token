@@ -34,6 +34,8 @@
   --token-color-dark-blue-800: #415f71;
   --token-color-dark-blue-900: #213a54;
   --token-color-dark-blue-1000: #1b284c;
+  --token-color-light-blue-100: #e5f2ff;
+  --token-color-light-blue-200: #cce6ff;
   --token-color-light-blue-400: #70c8ff;
   --token-color-light-blue-500: #64affa;
   --token-color-light-blue-600: #5585e6;
@@ -72,6 +74,8 @@
   --semantic-radius-circle: 50px;
   --semantic-space-1: 16px;
   --semantic-space-2: 32px;
+  --semantic-space-3: 48px;
+  --semantic-space-4: 64px;
   --semantic-space-1-5: 24px;
   --semantic-space-1-25: 20px;
   --semantic-space-1-75: 28px;
@@ -80,6 +84,7 @@
   --semantic-space-medium: 16px;
   --semantic-space-small: 8px;
   --semantic-space-large: 24px;
+  --semantic-space-extreme-large: 100px;
   --semantic-menu-selected: #213a54;
   --semantic-background-white: #fcfcff;
   --semantic-background-dark: #213a54;
@@ -108,4 +113,15 @@
   --semantic-slide-dark-background: #3d3d46;
   --semantic-slide-dark-card: #d9d9d9;
   --semantic-slide-dark-content: #3d3d46;
+  --semantic-slide-background: #cce6ff;
+  --semantic-header-background: #1b284c;
+  --semantic-header-content: #70c8ff;
+  --semantic-timetable-odd-background: #cce6ff;
+  --semantic-timetable-odd-strip: #5585e6;
+  --semantic-timetable-odd-heading: #0066cc;
+  --semantic-timetable-even-background: #e5f2ff;
+  --semantic-timetable-even-strip: #64affa;
+  --semantic-timetable-even-heading: #0066cc;
+  --semantic-timetable-per-time: #213a54;
+  --semantic-timetable-border: #3d3d46;
 }
