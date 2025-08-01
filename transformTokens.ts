@@ -25,6 +25,18 @@ StyleDictionary.registerTransform({
   }
 })
 
+StyleDictionary.registerTransform({
+  name: 'fontWeightIntoNumber',
+  type: transformTypes.value,
+  transitive: true,
+  filter: (token) => {
+    return token.path.includes('weight')
+  },
+  transform: (token) => {
+    return `${parseInt(token.value).toString()}`
+  }
+})
+
 const myStyleDictionary = new StyleDictionary()
 
 const extendedSd = await myStyleDictionary.extend({
@@ -44,7 +56,7 @@ const extendedSd = await myStyleDictionary.extend({
     css: {
       transformGroup: 'css',
       buildPath: 'build/css/',
-      transforms: ['spaceIntoPx', 'radiusIntoPx'],
+      transforms: ['spaceIntoPx', 'radiusIntoPx', 'fontWeightIntoNumber'],
       files: [
         {
           destination: '_variables.css',
