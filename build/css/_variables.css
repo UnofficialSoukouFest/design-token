@@ -62,6 +62,10 @@
   --semantic-font-size-content: 1rem;
   --semantic-font-size-heading2: 1.6rem;
   --semantic-font-size-heading: 2rem;
+  --semantic-font-weight-bold: 700rem;
+  --semantic-font-weight-thin: 100rem;
+  --semantic-font-weight-regular: 400rem;
+  --semantic-font-weight-extra-bold: 800rem;
   --semantic-radius-small: 3px;
   --semantic-radius-medium: 5px;
   --semantic-radius-large: 6px;

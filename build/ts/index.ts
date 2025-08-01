@@ -106,6 +106,12 @@ export default {
         heading2: 1.6,
         heading: 2,
       },
+      weight: {
+        bold: 700,
+        thin: 100,
+        regular: 400,
+        "extra-bold": 800,
+      },
     },
     radius: {
       small: 3,
